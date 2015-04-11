@@ -247,7 +247,11 @@
         if (titleColor) {
             NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:titleAttrs];
             
-            dict[NSForegroundColorAttributeName] = (id)titleColor.CGColor;
+            // the code resulting view debugging crash
+            // explanied here http://stackoverflow.com/questions/10558619/encoding-nsattributedstring-throws-error/10558963#10558963
+//            dict[NSForegroundColorAttributeName] = (id)titleColor.CGColor;
+            
+            dict[NSForegroundColorAttributeName] = titleColor;
             
             titleAttrs = [NSDictionary dictionaryWithDictionary:dict];
         }
