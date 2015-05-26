@@ -166,6 +166,11 @@
     self.contentMode = UIViewContentModeRedraw;
 }
 
+-(void)setSelectionIndicatorBoxCornerRadius:(CGFloat)selectionIndicatorBoxCornerRadius {
+    _selectionIndicatorBoxCornerRadius = selectionIndicatorBoxCornerRadius;
+    self.selectionIndicatorBoxLayer.cornerRadius = _selectionIndicatorBoxCornerRadius;
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
 
