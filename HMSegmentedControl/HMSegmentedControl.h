@@ -57,14 +57,14 @@ typedef enum {
 
 /**
  Provide a block to be executed when selected index is changed.
- 
+
  Alternativly, you could use `addTarget:action:forControlEvents:`
  */
 @property (nonatomic, copy) IndexChangeBlock indexChangeBlock;
 
 /**
  Used to apply custom text styling to titles when set.
- 
+
  When this block is set, no additional styling is applied to the `NSAttributedString` object returned from this block.
  */
 @property (nonatomic, copy) HMTitleFormatterBlock titleFormatter;
@@ -76,91 +76,91 @@ typedef enum {
 
 /*
  Text attributes to apply to selected item title text.
- 
+
  Attributes not set in this dictionary are inherited from `titleTextAttributes`.
  */
 @property (nonatomic, strong) NSDictionary *selectedTitleTextAttributes UI_APPEARANCE_SELECTOR;
 
 /**
  Segmented control background color.
- 
+
  Default is `[UIColor whiteColor]`
  */
 @property (nonatomic, strong) UIColor *backgroundColor UI_APPEARANCE_SELECTOR;
 
 /**
  Color for the selection indicator stripe/box
- 
+
  Default is `R:52, G:181, B:229`
  */
 @property (nonatomic, strong) UIColor *selectionIndicatorColor UI_APPEARANCE_SELECTOR;
 
 /**
  Color for the vertical divider between segments.
- 
+
  Default is `[UIColor blackColor]`
  */
 @property (nonatomic, strong) UIColor *verticalDividerColor UI_APPEARANCE_SELECTOR;
 
 /**
  Opacity for the seletion indicator box.
- 
+
  Default is `0.2f`
  */
 @property (nonatomic) CGFloat selectionIndicatorBoxOpacity;
 
 /**
  Width the vertical divider between segments that is added when `verticalDividerEnabled` is set to YES.
- 
+
  Default is `1.0f`
  */
 @property (nonatomic, assign) CGFloat verticalDividerWidth;
 
 /**
  Specifies the style of the control
- 
+
  Default is `HMSegmentedControlTypeText`
  */
 @property (nonatomic, assign) HMSegmentedControlType type;
 
 /**
  Specifies the style of the selection indicator.
- 
+
  Default is `HMSegmentedControlSelectionStyleTextWidthStripe`
  */
 @property (nonatomic, assign) HMSegmentedControlSelectionStyle selectionStyle;
 
 /**
  Specifies the style of the segment's width.
- 
+
  Default is `HMSegmentedControlSegmentWidthStyleFixed`
  */
 @property (nonatomic, assign) HMSegmentedControlSegmentWidthStyle segmentWidthStyle;
 
 /**
  Specifies the location of the selection indicator.
- 
+
  Default is `HMSegmentedControlSelectionIndicatorLocationUp`
  */
 @property (nonatomic, assign) HMSegmentedControlSelectionIndicatorLocation selectionIndicatorLocation;
 
 /*
  Specifies the border type.
- 
+
  Default is `HMSegmentedControlBorderTypeNone`
  */
 @property (nonatomic, assign) HMSegmentedControlBorderType borderType;
 
 /**
  Specifies the border color.
- 
+
  Default is `[UIColor blackColor]`
  */
 @property (nonatomic, strong) UIColor *borderColor;
 
 /**
  Specifies the border width.
- 
+
  Default is `1.0f`
  */
 @property (nonatomic, assign) CGFloat borderWidth;
@@ -187,7 +187,7 @@ typedef enum {
 
 /**
  Height of the selection indicator. Only effective when `HMSegmentedControlSelectionStyle` is either `HMSegmentedControlSelectionStyleTextWidthStripe` or `HMSegmentedControlSelectionStyleFullWidthStripe`.
- 
+
  Default is 5.0
  */
 @property (nonatomic, readwrite) CGFloat selectionIndicatorHeight;
@@ -195,11 +195,11 @@ typedef enum {
 /**
  Edge insets for the selection indicator.
  NOTE: This does not affect the bounding box of HMSegmentedControlSelectionStyleBox
- 
+
  When HMSegmentedControlSelectionIndicatorLocationUp is selected, bottom edge insets are not used
- 
+
  When HMSegmentedControlSelectionIndicatorLocationDown is selected, top edge insets are not used
- 
+
  Defaults are top: 0.0f
              left: 0.0f
            bottom: 0.0f
@@ -209,7 +209,7 @@ typedef enum {
 
 /**
  Inset left and right edges of segments.
- 
+
  Default is UIEdgeInsetsMake(0, 5, 0, 5)
  */
 @property (nonatomic, readwrite) UIEdgeInsets segmentEdgeInset;
@@ -218,6 +218,11 @@ typedef enum {
  Default is YES. Set to NO to disable animation during user selection.
  */
 @property (nonatomic) BOOL shouldAnimateUserSelection;
+
+// properties for round selection box
+
+@property (nonatomic) CGFloat selectionIndicatorBoxCornerRadius;
+@property (nonatomic) CGSize  selectionIndicatorBoxSize;
 
 - (id)initWithSectionTitles:(NSArray *)sectiontitles;
 - (id)initWithSectionImages:(NSArray *)sectionImages sectionSelectedImages:(NSArray *)sectionSelectedImages;
